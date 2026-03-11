@@ -196,11 +196,11 @@ class SistemaCifrado:
             
             archivo_descifrado = os.path.join(self.carpeta_recibidos, nombre_descifrado)
             
-            self._log(f"\n🔓 Iniciando descifrado de: {nombre_archivo}")
+            self._log(f"\nIniciando descifrado de: {nombre_archivo}")
             self.cifrado_hibrido.descifrar_archivo_hibrido(archivo_cifrado, archivo_descifrado)
             
-            self._log(f"✅ Archivo descifrado exitosamente!")
-            self._log(f"📁 Archivo guardado en: {archivo_descifrado}")
+            self._log(f"Archivo descifrado exitosamente!")
+            self._log(f"Archivo guardado en: {archivo_descifrado}")
             
             if self.gui:
                 self.gui.mostrar_info("Éxito", 
@@ -211,18 +211,59 @@ class SistemaCifrado:
             return True
             
         except Exception as e:
-            self._log(f"❌ ERROR al descifrar: {e}")
+            self._log(f"ERROR al descifrar: {e}")
             if self.gui:
                 self.gui.mostrar_error("Error", f"Error al descifrar: {e}")
             return False
     
     def _on_archivo_recibido(self, ruta_archivo):
+        """Callback cuando se recibe un archivo"""
         nombre_archivo = os.path.basename(ruta_archivo)
         self._log(f"📥 Archivo recibido: {nombre_archivo}")
         
-        if self.gui:
-            self.gui.agregar_archivo_recibido(nombre_archivo)
+        # NUEVO: Detectar si es una clave pública
+        if nombre_archivo == "mi_clave_publica.pem":
+            self._procesar_clave_recibida(ruta_archivo)
+        else:
+            # Es un archivo cifrado normal
+            if self.gui:
+                self.gui.agregar_archivo_recibido(nombre_archivo)
     
+    def _procesar_clave_recibida(self, ruta_archivo):
+        """Procesa automáticamente una clave pública recibida"""
+        nombre_archivo = os.path.basename(ruta_archivo)
+        
+        # Detectar si es una clave pública
+        if nombre_archivo == "mi_clave_publica.pem":
+            self._log("🔑 Clave pública recibida del destinatario")
+            
+            try:
+                # Renombrar como destinatario_publica.pem
+                ruta_destino = os.path.join(self.carpeta_claves, "destinatario_publica.pem")
+                
+                # Copiar el archivo
+                import shutil
+                shutil.copy(ruta_archivo, ruta_destino)
+                
+                # Cargar la clave
+                self.rsa.cargar_clave_publica(ruta_destino)
+                self.clave_dest_cargada = True
+                
+                # Actualizar GUI
+                if self.gui:
+                    self.gui.actualizar_estado_claves(clave_dest=True)
+                    self.gui.mostrar_info("Clave Recibida", 
+                        "✅ Clave pública del destinatario recibida e importada.\n\n" +
+                        "¡Ya puedes enviar archivos cifrados!")
+                
+                self._log("✅ Clave del destinatario importada automáticamente")
+                
+                # Eliminar el archivo original
+                os.remove(ruta_archivo)
+                
+            except Exception as e:
+                self._log(f"❌ Error al procesar clave recibida: {e}")
+
     def ejecutar_gui(self):
         self.gui = CifradoGUI(self.nombre, self.carpeta_base)
         
@@ -272,26 +313,47 @@ class SistemaCifrado:
         self.descifrar_archivo(nombre_archivo)
     
     def _gui_conectar(self, ip):
-        self._log(f"🔗 Configurado para enviar a: {ip}")
+        """Callback GUI: Conectar y enviar clave pública automáticamente"""
+        self._log(f"🔗 Conectando con: {ip}")
         
-        ruta_dest = os.path.join(self.carpeta_claves, "destinatario_publica.pem")
-        if not os.path.exists(ruta_dest):
-            self.gui.mostrar_error("Error",
-                f"No se encuentra la clave pública del destinatario.\n\n" +
-                f"Colócala en:\n{ruta_dest}")
+        # Verificar que tengamos nuestras claves
+        if not self.claves_generadas:
+            self.gui.mostrar_error("Error", "Primero debes generar tus claves")
             return
         
-        if not self.clave_dest_cargada:
+        # NUEVO: Enviar nuestra clave pública automáticamente
+        self._log("📤 Enviando tu clave pública al destinatario...")
+        
+        ruta_mi_clave = os.path.join(self.carpeta_claves, "mi_clave_publica.pem")
+        
+        try:
+            # Enviar clave pública
+            exito = self.network.enviar_archivo(ruta_mi_clave, ip)
+            
+            if exito:
+                self._log("✅ Tu clave pública fue enviada exitosamente")
+                self.gui.mostrar_info("Éxito", 
+                    "Tu clave pública fue enviada a:\n" + ip + 
+                    "\n\nAhora espera a que te envíen su clave...")
+            else:
+                self.gui.mostrar_error("Error", 
+                    "No se pudo enviar la clave pública.\n" +
+                    "Verifica que el destinatario esté conectado.")
+                return
+        except Exception as e:
+            self.gui.mostrar_error("Error", f"Error al enviar clave: {e}")
+            return
+        
+        # Intentar cargar clave del destinatario si ya existe
+        ruta_dest = os.path.join(self.carpeta_claves, "destinatario_publica.pem")
+        if os.path.exists(ruta_dest):
             try:
                 self.rsa.cargar_clave_publica(ruta_dest)
                 self.clave_dest_cargada = True
                 self.gui.actualizar_estado_claves(clave_dest=True)
                 self._log("✅ Clave del destinatario cargada")
             except Exception as e:
-                self.gui.mostrar_error("Error", f"Error al cargar clave: {e}")
-                return
-        
-        self.gui.mostrar_info("Conexión", f"Listo para enviar archivos a {ip}")
+                self._log(f"⚠️ Error al cargar clave del destinatario: {e}")
 
 
 def main():

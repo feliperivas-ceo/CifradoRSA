@@ -1,0 +1,47 @@
+[17:36:45] 🚀 Inicializando sistema para Alicia...
+[17:36:45] [17:36:45] 🌐 Servidor iniciado en 172.20.10.2:5000
+[17:36:45] 📍 Tu IP local: 172.20.10.2
+[17:36:45] ✅ Sistema listo!
+[17:38:17] 🔗 Conectando con: 127.0.0.1
+[17:38:20] 
+============================================================
+[17:38:20] 🔑 GENERANDO CLAVES RSA
+[17:38:20] ============================================================
+[17:38:20] 
+📊 Información de tus claves:
+[17:38:20]    • Tamaño: 2048 bits
+[17:38:20]    • Exponente público (e): 65537
+[17:38:20]    • Módulo (n): 21738301291653969485565165603753889233008629659525... (truncado)
+[17:38:20] 
+📂 Claves guardadas en:
+[17:38:20]    🔐 Privada: C:\Users\muril\Desktop\Personal\2026-1\UNIVERSIDAD\CIBERSEGURIDAD\SEMANA 4\proyecto_cifrado_rsa\proyecto_cifrado_rsa\PC1_Alicia\claves\mi_clave_privada.pem
+[17:38:20]    🔓 Pública: C:\Users\muril\Desktop\Personal\2026-1\UNIVERSIDAD\CIBERSEGURIDAD\SEMANA 4\proyecto_cifrado_rsa\proyecto_cifrado_rsa\PC1_Alicia\claves\mi_clave_publica.pem
+[17:38:20] 
+💡 IMPORTANTE:
+[17:38:20]    1. NUNCA compartas tu clave privada
+[17:38:20]    2. Comparte tu clave pública con el destinatario
+[17:38:20]    3. Guarda su clave pública como 'destinatario_publica.pem'
+[17:38:20] 
+✅ CLAVES GENERADAS EXITOSAMENTE!
+[17:38:20] ============================================================
+
+[17:38:26] 🔗 Conectando con: 127.0.0.1
+[17:38:26] 📤 Enviando tu clave pública al destinatario...
+[17:38:26] [17:38:26] 📤 Enviando: mi_clave_publica.pem
+[17:38:36] [17:38:36] ❌ Error al enviar: timed out
+[17:38:26] [17:38:26] 📡 Conexión entrante desde 127.0.0.1
+[17:38:36] [17:38:36] 📄 Recibiendo: mi_clave_publica.pem (451 bytes)
+[17:38:36] [17:38:36] ❌ Error al recibir: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+[17:38:51] [17:38:51] 📡 Conexión entrante desde 127.0.0.1
+[17:38:51] [17:38:51] 📄 Recibiendo: mi_clave_publica.pem (451 bytes)
+[17:38:51] [17:38:51] ✅ Archivo recibido: mi_clave_publica.pem
+[17:38:51] 📥 Archivo recibido: mi_clave_publica.pem
+[17:38:51] 🔑 Clave pública recibida del destinatario
+[17:39:00] ✅ Clave del destinatario importada automáticamente
+[17:39:01] 🔗 Conectando con: 127.0.0.1
+[17:39:01] 📤 Enviando tu clave pública al destinatario...
+[17:39:01] [17:39:01] 📤 Enviando: mi_clave_publica.pem
+[17:39:11] [17:39:11] ❌ Error al enviar: timed out
+[17:39:01] [17:39:01] 📡 Conexión entrante desde 127.0.0.1
+[17:39:11] [17:39:11] 📄 Recibiendo: mi_clave_publica.pem (451 bytes)
+[17:39:11] [17:39:11] ❌ Error al recibir: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host

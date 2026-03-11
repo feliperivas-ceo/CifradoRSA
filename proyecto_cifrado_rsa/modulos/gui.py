@@ -181,6 +181,7 @@ class CifradoGUI:
             cursor="hand2",
             command=self._seleccionar_archivo
         )
+        
         btn_seleccionar.pack(side=tk.RIGHT)
         
         self.btn_cifrar_enviar = tk.Button(
@@ -194,7 +195,17 @@ class CifradoGUI:
             command=self._on_cifrar_enviar
         )
         self.btn_cifrar_enviar.pack(pady=(10, 0), ipadx=20, ipady=5)
-        
+        self.btn_ver_cifrados = tk.Button(
+            frame_enviar,
+            text="📂 Ver Archivos Cifrados",
+            font=("Arial", 9),
+            bg="#9b59b6",
+            fg="white",
+            cursor="hand2",
+            command=self._on_ver_cifrados
+        )
+        self.btn_ver_cifrados.pack(pady=(5, 0))
+        btn_seleccionar.pack(side=tk.RIGHT)
         # SECCIÓN: ARCHIVOS RECIBIDOS
         frame_recibidos = tk.LabelFrame(
             frame_principal,
@@ -314,6 +325,22 @@ class CifradoGUI:
         
         if self.callback_conectar:
             self.callback_conectar(self.ip_destino.get())
+    def _on_ver_cifrados(self):
+        """Abre la carpeta de archivos cifrados para descargar"""
+        import subprocess
+        import platform
+        
+        carpeta_cifrados = os.path.join(self.carpeta_base, "recibidos")
+        
+        # Abrir carpeta según el sistema operativo
+        if platform.system() == "Windows":
+            subprocess.Popen(f'explorer "{carpeta_cifrados}"')
+        elif platform.system() == "Darwin":  # Mac
+            subprocess.Popen(["open", carpeta_cifrados])
+        else:  # Linux
+            subprocess.Popen(["xdg-open", carpeta_cifrados])
+        
+        self.agregar_log(f"📂 Abriendo carpeta: {carpeta_cifrados}")
     
     def actualizar_estado_claves(self, mis_claves=False, clave_dest=False):
         if mis_claves:
