@@ -13,7 +13,7 @@ class CifradoGUI:
         self.callback_conectar = None
         
         self.root = tk.Tk()
-        self.root.title(f"🔐 Sistema de Cifrado RSA - {nombre_usuario}")
+        self.root.title(f"Sistema de Cifrado RSA - {nombre_usuario}")
         self.root.geometry("900x700")
         self.root.resizable(False, False)
         
@@ -30,7 +30,7 @@ class CifradoGUI:
         
         titulo = tk.Label(
             frame_titulo,
-            text=f"🔐 SISTEMA DE CIFRADO RSA",
+            text=f"SISTEMA DE CIFRADO RSA",
             font=("Arial", 18, "bold"),
             bg="#2c3e50",
             fg="white"
@@ -53,7 +53,7 @@ class CifradoGUI:
         # SECCIÓN: ESTADO DE CLAVES
         frame_claves = tk.LabelFrame(
             frame_principal,
-            text="🔑 Estado de las Claves",
+            text="Estado de las Claves",
             font=("Arial", 11, "bold"),
             bg="#ecf0f1",
             padx=10,
@@ -63,7 +63,7 @@ class CifradoGUI:
         
         self.label_mis_claves = tk.Label(
             frame_claves,
-            text="🔐 Mis Claves: ❌ No generadas",
+            text="Mis Claves: No generadas",
             font=("Arial", 10),
             bg="#ecf0f1",
             anchor="w"
@@ -72,7 +72,7 @@ class CifradoGUI:
         
         self.label_clave_dest = tk.Label(
             frame_claves,
-            text="🔓 Clave Destinatario: ❌ No importada",
+            text="Clave Destinatario: No importada",
             font=("Arial", 10),
             bg="#ecf0f1",
             anchor="w"
@@ -81,7 +81,7 @@ class CifradoGUI:
         
         btn_generar = tk.Button(
             frame_claves,
-            text="🔑 Generar Mis Claves",
+            text="Generar Mis Claves",
             font=("Arial", 10, "bold"),
             bg="#27ae60",
             fg="white",
@@ -93,7 +93,7 @@ class CifradoGUI:
         # SECCIÓN: CONEXIÓN DE RED
         frame_red = tk.LabelFrame(
             frame_principal,
-            text="🌐 Conexión de Red",
+            text="Conexión de Red",
             font=("Arial", 11, "bold"),
             bg="#ecf0f1",
             padx=10,
@@ -103,7 +103,7 @@ class CifradoGUI:
         
         self.label_mi_ip = tk.Label(
             frame_red,
-            text="📍 Mi IP: Obteniendo...",
+            text="Mi IP: Obteniendo...",
             font=("Arial", 10),
             bg="#ecf0f1",
             anchor="w"
@@ -140,7 +140,7 @@ class CifradoGUI:
         
         btn_conectar = tk.Button(
             frame_ip,
-            text="🔗 Conectar",
+            text="Conectar",
             font=("Arial", 9),
             bg="#3498db",
             fg="white",
@@ -152,7 +152,7 @@ class CifradoGUI:
         # SECCIÓN: ENVIAR ARCHIVO
         frame_enviar = tk.LabelFrame(
             frame_principal,
-            text="📤 Enviar Archivo Cifrado",
+            text="Enviar Archivo Cifrado",
             font=("Arial", 11, "bold"),
             bg="#ecf0f1",
             padx=10,
@@ -165,7 +165,7 @@ class CifradoGUI:
         
         self.label_archivo = tk.Label(
             frame_seleccionar,
-            text="📁 Ningún archivo seleccionado",
+            text="Ningún archivo seleccionado",
             font=("Arial", 9),
             bg="#ecf0f1",
             anchor="w"
@@ -174,7 +174,7 @@ class CifradoGUI:
         
         btn_seleccionar = tk.Button(
             frame_seleccionar,
-            text="📂 Seleccionar Archivo",
+            text="Seleccionar Archivo",
             font=("Arial", 9),
             bg="#95a5a6",
             fg="white",
@@ -186,7 +186,7 @@ class CifradoGUI:
         
         self.btn_cifrar_enviar = tk.Button(
             frame_enviar,
-            text="🔒 CIFRAR Y ENVIAR",
+            text="CIFRAR Y ENVIAR",
             font=("Arial", 11, "bold"),
             bg="#e74c3c",
             fg="white",
@@ -197,7 +197,7 @@ class CifradoGUI:
         self.btn_cifrar_enviar.pack(pady=(10, 0), ipadx=20, ipady=5)
         self.btn_ver_cifrados = tk.Button(
             frame_enviar,
-            text="📂 Ver Archivos Cifrados",
+            text="Ver Archivos Cifrados",
             font=("Arial", 9),
             bg="#9b59b6",
             fg="white",
@@ -209,7 +209,7 @@ class CifradoGUI:
         # SECCIÓN: ARCHIVOS RECIBIDOS
         frame_recibidos = tk.LabelFrame(
             frame_principal,
-            text="📥 Archivos Recibidos",
+            text="Archivos Recibidos",
             font=("Arial", 11, "bold"),
             bg="#ecf0f1",
             padx=10,
@@ -234,7 +234,7 @@ class CifradoGUI:
         
         self.btn_descifrar = tk.Button(
             frame_recibidos,
-            text="🔓 Descifrar Archivo Seleccionado",
+            text="Descifrar Archivo Seleccionado",
             font=("Arial", 10, "bold"),
             bg="#16a085",
             fg="white",
@@ -247,7 +247,7 @@ class CifradoGUI:
         # SECCIÓN: LOG
         frame_log = tk.LabelFrame(
             frame_principal,
-            text="📋 Registro de Actividad",
+            text="Registro de Actividad",
             font=("Arial", 11, "bold"),
             bg="#ecf0f1",
             padx=10,
@@ -281,7 +281,7 @@ class CifradoGUI:
             nombre = os.path.basename(archivo)
             tamaño = os.path.getsize(archivo)
             self.label_archivo.config(
-                text=f"📁 {nombre} ({tamaño:,} bytes)"
+                text=f" {nombre} ({tamaño:,} bytes)"
             )
             
             if self.ip_destino.get():
@@ -340,39 +340,39 @@ class CifradoGUI:
         else:  # Linux
             subprocess.Popen(["xdg-open", carpeta_cifrados])
         
-        self.agregar_log(f"📂 Abriendo carpeta: {carpeta_cifrados}")
+        self.agregar_log(f"Abriendo carpeta: {carpeta_cifrados}")
     
     def actualizar_estado_claves(self, mis_claves=False, clave_dest=False):
         if mis_claves:
             self.label_mis_claves.config(
-                text="🔐 Mis Claves: ✅ Generadas",
+                text="Mis Claves: Generadas",
                 fg="#27ae60"
             )
         
         if clave_dest:
             self.label_clave_dest.config(
-                text="🔓 Clave Destinatario: ✅ Importada",
+                text="Clave Destinatario: Importada",
                 fg="#27ae60"
             )
     
     def actualizar_mi_ip(self, ip):
-        self.label_mi_ip.config(text=f"📍 Mi IP: {ip}")
+        self.label_mi_ip.config(text=f"Mi IP: {ip}")
     
     def actualizar_estado_red(self, conectado=False, mensaje=""):
         if conectado:
             self.label_estado_red.config(
-                text=f"● Servidor: ✅ Activo - {mensaje}",
+                text=f"Servidor: Activo - {mensaje}",
                 fg="#27ae60"
             )
         else:
             self.label_estado_red.config(
-                text=f"● Servidor: ⚠️ {mensaje}",
+                text=f"Servidor: {mensaje}",
                 fg="#e67e22"
             )
     
     def agregar_archivo_recibido(self, nombre_archivo):
         self.listbox_recibidos.insert(tk.END, nombre_archivo)
-        self.agregar_log(f"📥 Nuevo archivo recibido: {nombre_archivo}")
+        self.agregar_log(f"Nuevo archivo recibido: {nombre_archivo}")
     
     def agregar_log(self, mensaje):
         self.text_log.config(state=tk.NORMAL)
@@ -382,7 +382,7 @@ class CifradoGUI:
     
     def limpiar_seleccion_archivo(self):
         self.archivo_seleccionado = None
-        self.label_archivo.config(text="📁 Ningún archivo seleccionado")
+        self.label_archivo.config(text="Ningún archivo seleccionado")
         self.btn_cifrar_enviar.config(state=tk.DISABLED)
     
     def mostrar_error(self, titulo, mensaje):

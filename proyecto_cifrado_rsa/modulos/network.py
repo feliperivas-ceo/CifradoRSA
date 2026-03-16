@@ -40,7 +40,7 @@ class NetworkManager:
         servidor_thread.start()
         
         ip_local = self.obtener_ip_local()
-        self.log(f"🌐 Servidor iniciado en {ip_local}:{self.puerto}")
+        self.log(f"Servidor iniciado en {ip_local}:{self.puerto}")
     
     def _ejecutar_servidor(self):
         self.socket_servidor = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -54,7 +54,7 @@ class NetworkManager:
                 try:
                     self.socket_servidor.settimeout(1.0)
                     cliente_socket, direccion = self.socket_servidor.accept()
-                    self.log(f"📡 Conexión entrante desde {direccion[0]}")
+                    self.log(f"Conexión entrante desde {direccion[0]}")
                     
                     conexion_thread = threading.Thread(
                         target=self._manejar_conexion,
@@ -67,10 +67,10 @@ class NetworkManager:
                     continue
                 except Exception as e:
                     if self.servidor_activo:
-                        self.log(f"❌ Error: {e}")
+                        self.log(f"Error: {e}")
                     break
         except Exception as e:
-            self.log(f"❌ Error al iniciar servidor: {e}")
+            self.log(f"Error al iniciar servidor: {e}")
         finally:
             if self.socket_servidor:
                 self.socket_servidor.close()
@@ -83,7 +83,7 @@ class NetworkManager:
             nombre_archivo = metadatos['nombre']
             tamaño_archivo = metadatos['tamaño']
             
-            self.log(f"📄 Recibiendo: {nombre_archivo} ({tamaño_archivo:,} bytes)")
+            self.log(f"Recibiendo: {nombre_archivo} ({tamaño_archivo:,} bytes)")
             cliente_socket.send(b'OK')
             
             ruta_destino = os.path.join(self.carpeta_recepcion, nombre_archivo)
@@ -98,23 +98,23 @@ class NetworkManager:
                     bytes_recibidos += len(bloque)
             
             if bytes_recibidos == tamaño_archivo:
-                self.log(f"✅ Archivo recibido: {nombre_archivo}")
+                self.log(f"Archivo recibido: {nombre_archivo}")
                 if self.callback_archivo_recibido:
                     self.callback_archivo_recibido(ruta_destino)
         except Exception as e:
-            self.log(f"❌ Error al recibir: {e}")
+            self.log(f"Error al recibir: {e}")
         finally:
             cliente_socket.close()
     
     def enviar_archivo(self, ruta_archivo, ip_destino):
         if not os.path.exists(ruta_archivo):
-            self.log(f"❌ Archivo no encontrado")
+            self.log(f"Archivo no encontrado")
             return False
         
         nombre_archivo = os.path.basename(ruta_archivo)
         tamaño_archivo = os.path.getsize(ruta_archivo)
         
-        self.log(f"📤 Enviando: {nombre_archivo}")
+        self.log(f"Enviando: {nombre_archivo}")
         
         try:
             cliente_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -135,12 +135,12 @@ class NetworkManager:
                         break
                     cliente_socket.send(bloque)
             
-            self.log(f"✅ Archivo enviado")
+            self.log(f"Archivo enviado")
             cliente_socket.close()
             return True
             
         except Exception as e:
-            self.log(f"❌ Error al enviar: {e}")
+            self.log(f"Error al enviar: {e}")
             return False
     
     def detener_servidor(self):

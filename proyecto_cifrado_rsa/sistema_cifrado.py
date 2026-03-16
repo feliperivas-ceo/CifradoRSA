@@ -57,28 +57,28 @@ class SistemaCifrado:
             f.write(mensaje_completo + "\n")
     
     def inicializar(self):
-        self._log(f"🚀 Inicializando sistema para {self.nombre}...")
+        self._log(f"Iniciando sistema para {self.nombre}...")
         
         ruta_privada = os.path.join(self.carpeta_claves, "mi_clave_privada.pem")
         ruta_publica = os.path.join(self.carpeta_claves, "mi_clave_publica.pem")
         
         if os.path.exists(ruta_privada) and os.path.exists(ruta_publica):
-            self._log("📂 Cargando claves existentes...")
+            self._log("Cargando claves existentes...")
             try:
                 self.rsa.cargar_clave_privada(ruta_privada)
                 self.claves_generadas = True
-                self._log("✅ Claves cargadas exitosamente")
+                self._log("Claves cargadas exitosamente")
             except Exception as e:
-                self._log(f"⚠️ Error al cargar claves: {e}")
+                self._log(f"Error al cargar claves: {e}")
         
         ruta_dest = os.path.join(self.carpeta_claves, "destinatario_publica.pem")
         if os.path.exists(ruta_dest):
             try:
                 self.rsa.cargar_clave_publica(ruta_dest)
                 self.clave_dest_cargada = True
-                self._log("✅ Clave del destinatario cargada")
+                self._log("Clave del destinatario cargada")
             except Exception as e:
-                self._log(f"⚠️ Error al cargar clave del destinatario: {e}")
+                self._log(f"Error al cargar clave del destinatario: {e}")
         
         self.cifrado_hibrido = CifradoHibrido(self.rsa)
         
@@ -87,20 +87,20 @@ class SistemaCifrado:
         self.network.iniciar_servidor(self.carpeta_recibidos)
         
         ip_local = self.network.obtener_ip_local()
-        self._log(f"📍 Tu IP local: {ip_local}")
+        self._log(f"Tu IP local: {ip_local}")
         
         return ip_local
     
     def generar_claves(self):
         self._log("\n" + "="*60)
-        self._log("🔑 GENERANDO CLAVES RSA")
+        self._log("GENERANDO CLAVES RSA")
         self._log("="*60)
         
         try:
             self.rsa.generar_claves(2048)
             
             info = self.rsa.obtener_info_clave_publica()
-            self._log(f"\n📊 Información de tus claves:")
+            self._log(f"\nInformación de tus claves:")
             self._log(f"   • Tamaño: {info['tamaño_bits']} bits")
             self._log(f"   • Exponente público (e): {info['exponente']}")
             self._log(f"   • Módulo (n): {str(info['modulo'])[:50]}... (truncado)")
@@ -111,35 +111,35 @@ class SistemaCifrado:
             self.rsa.guardar_clave_privada(ruta_privada)
             self.rsa.guardar_clave_publica(ruta_publica)
             
-            self._log(f"\n📂 Claves guardadas en:")
-            self._log(f"   🔐 Privada: {ruta_privada}")
-            self._log(f"   🔓 Pública: {ruta_publica}")
+            self._log(f"\nClaves guardadas en:")
+            self._log(f"   Privada: {ruta_privada}")
+            self._log(f"   Pública: {ruta_publica}")
             
-            self._log(f"\n💡 IMPORTANTE:")
+            self._log(f"\nIMPORTANTE:")
             self._log(f"   1. NUNCA compartas tu clave privada")
             self._log(f"   2. Comparte tu clave pública con el destinatario")
             self._log(f"   3. Guarda su clave pública como 'destinatario_publica.pem'")
             
             self.claves_generadas = True
-            self._log("\n✅ CLAVES GENERADAS EXITOSAMENTE!")
+            self._log("\nCLAVES GENERADAS EXITOSAMENTE!")
             self._log("="*60 + "\n")
             
             return True
             
         except Exception as e:
-            self._log(f"\n❌ ERROR al generar claves: {e}")
+            self._log(f"\nERROR al generar claves: {e}")
             self._log("="*60 + "\n")
             return False
     
     def cifrar_y_enviar(self, ruta_archivo, ip_destino):
         if not self.claves_generadas:
-            self._log("❌ Debes generar tus claves primero")
+            self._log("Debes generar tus claves primero")
             if self.gui:
                 self.gui.mostrar_error("Error", "Genera tus claves primero")
             return False
         
         if not self.clave_dest_cargada:
-            self._log("❌ Debes cargar la clave pública del destinatario")
+            self._log("Debes cargar la clave pública del destinatario")
             if self.gui:
                 self.gui.mostrar_error("Error", 
                     "Coloca la clave pública del destinatario en:\n" +
@@ -153,14 +153,14 @@ class SistemaCifrado:
                 nombre_archivo + ".enc"
             )
             
-            self._log(f"\n🔒 Iniciando cifrado de: {nombre_archivo}")
+            self._log(f"\nIniciando cifrado de: {nombre_archivo}")
             self.cifrado_hibrido.cifrar_archivo_hibrido(ruta_archivo, archivo_cifrado)
             
-            self._log(f"📤 Enviando archivo cifrado a {ip_destino}...")
+            self._log(f"Enviando archivo cifrado a {ip_destino}...")
             exito = self.network.enviar_archivo(archivo_cifrado, ip_destino)
             
             if exito:
-                self._log("✅ Archivo enviado exitosamente!")
+                self._log("Archivo enviado exitosamente!")
                 if self.gui:
                     self.gui.mostrar_info("Éxito", "Archivo cifrado y enviado correctamente")
                     self.gui.limpiar_seleccion_archivo()
@@ -168,20 +168,20 @@ class SistemaCifrado:
                 os.remove(archivo_cifrado)
                 return True
             else:
-                self._log("❌ Error al enviar archivo")
+                self._log("Error al enviar archivo")
                 if self.gui:
                     self.gui.mostrar_error("Error", "No se pudo enviar el archivo")
                 return False
                 
         except Exception as e:
-            self._log(f"❌ ERROR: {e}")
+            self._log(f"ERROR: {e}")
             if self.gui:
                 self.gui.mostrar_error("Error", str(e))
             return False
     
     def descifrar_archivo(self, nombre_archivo):
         if not self.claves_generadas:
-            self._log("❌ Debes generar tus claves primero")
+            self._log("Debes generar tus claves primero")
             if self.gui:
                 self.gui.mostrar_error("Error", "Genera tus claves primero")
             return False
@@ -219,7 +219,7 @@ class SistemaCifrado:
     def _on_archivo_recibido(self, ruta_archivo):
         """Callback cuando se recibe un archivo"""
         nombre_archivo = os.path.basename(ruta_archivo)
-        self._log(f"📥 Archivo recibido: {nombre_archivo}")
+        self._log(f"Archivo recibido: {nombre_archivo}")
         
         # NUEVO: Detectar si es una clave pública
         if nombre_archivo == "mi_clave_publica.pem":
@@ -235,7 +235,7 @@ class SistemaCifrado:
         
         # Detectar si es una clave pública
         if nombre_archivo == "mi_clave_publica.pem":
-            self._log("🔑 Clave pública recibida del destinatario")
+            self._log("Clave pública recibida del destinatario")
             
             try:
                 # Renombrar como destinatario_publica.pem
@@ -253,16 +253,16 @@ class SistemaCifrado:
                 if self.gui:
                     self.gui.actualizar_estado_claves(clave_dest=True)
                     self.gui.mostrar_info("Clave Recibida", 
-                        "✅ Clave pública del destinatario recibida e importada.\n\n" +
+                        "Clave pública del destinatario recibida e importada.\n\n" +
                         "¡Ya puedes enviar archivos cifrados!")
                 
-                self._log("✅ Clave del destinatario importada automáticamente")
+                self._log("Clave del destinatario importada automáticamente")
                 
                 # Eliminar el archivo original
                 os.remove(ruta_archivo)
                 
             except Exception as e:
-                self._log(f"❌ Error al procesar clave recibida: {e}")
+                self._log(f"Error al procesar clave recibida: {e}")
 
     def ejecutar_gui(self):
         self.gui = CifradoGUI(self.nombre, self.carpeta_base)
@@ -288,7 +288,7 @@ class SistemaCifrado:
         
         self._cargar_archivos_recibidos()
         
-        self._log("✅ Sistema listo!")
+        self._log("Sistema listo!")
         self.gui.ejecutar()
         
         self.network.detener_servidor()
@@ -314,7 +314,7 @@ class SistemaCifrado:
     
     def _gui_conectar(self, ip):
         """Callback GUI: Conectar y enviar clave pública automáticamente"""
-        self._log(f"🔗 Conectando con: {ip}")
+        self._log(f"Conectando con: {ip}")
         
         # Verificar que tengamos nuestras claves
         if not self.claves_generadas:
@@ -322,7 +322,7 @@ class SistemaCifrado:
             return
         
         # NUEVO: Enviar nuestra clave pública automáticamente
-        self._log("📤 Enviando tu clave pública al destinatario...")
+        self._log("Enviando tu clave pública al destinatario...")
         
         ruta_mi_clave = os.path.join(self.carpeta_claves, "mi_clave_publica.pem")
         
@@ -331,7 +331,7 @@ class SistemaCifrado:
             exito = self.network.enviar_archivo(ruta_mi_clave, ip)
             
             if exito:
-                self._log("✅ Tu clave pública fue enviada exitosamente")
+                self._log("Tu clave pública fue enviada exitosamente")
                 self.gui.mostrar_info("Éxito", 
                     "Tu clave pública fue enviada a:\n" + ip + 
                     "\n\nAhora espera a que te envíen su clave...")
@@ -351,9 +351,9 @@ class SistemaCifrado:
                 self.rsa.cargar_clave_publica(ruta_dest)
                 self.clave_dest_cargada = True
                 self.gui.actualizar_estado_claves(clave_dest=True)
-                self._log("✅ Clave del destinatario cargada")
+                self._log("Clave del destinatario cargada")
             except Exception as e:
-                self._log(f"⚠️ Error al cargar clave del destinatario: {e}")
+                self._log(f"Error al cargar clave del destinatario: {e}")
 
 
 def main():

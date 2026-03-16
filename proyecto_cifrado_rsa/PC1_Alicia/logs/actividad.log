@@ -45,3 +45,10 @@
 [17:39:01] [17:39:01] 📡 Conexión entrante desde 127.0.0.1
 [17:39:11] [17:39:11] 📄 Recibiendo: mi_clave_publica.pem (451 bytes)
 [17:39:11] [17:39:11] ❌ Error al recibir: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+[13:27:53] 🚀 Inicializando sistema para Alicia...
+[13:27:53] 📂 Cargando claves existentes...
+[13:27:53] ✅ Claves cargadas exitosamente
+[13:27:53] ✅ Clave del destinatario cargada
+[13:27:53] [13:27:53] 🌐 Servidor iniciado en 172.30.163.24:5000
+[13:27:53] 📍 Tu IP local: 172.30.163.24
+[13:27:53] ✅ Sistema listo!
