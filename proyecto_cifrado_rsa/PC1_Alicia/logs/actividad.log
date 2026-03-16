@@ -52,3 +52,10 @@
 [13:27:53] [13:27:53] 🌐 Servidor iniciado en 172.30.163.24:5000
 [13:27:53] 📍 Tu IP local: 172.30.163.24
 [13:27:53] ✅ Sistema listo!
+[14:06:51] 🔗 Conectando con: 127.0.0.1
+[14:06:52] 📤 Enviando tu clave pública al destinatario...
+[14:06:52] [14:06:52] 📤 Enviando: mi_clave_publica.pem
+[14:07:02] [14:07:02] ❌ Error al enviar: timed out
+[14:06:52] [14:06:52] 📡 Conexión entrante desde 127.0.0.1
+[14:07:02] [14:07:02] 📄 Recibiendo: mi_clave_publica.pem (460 bytes)
+[14:07:02] [14:07:02] ❌ Error al recibir: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
