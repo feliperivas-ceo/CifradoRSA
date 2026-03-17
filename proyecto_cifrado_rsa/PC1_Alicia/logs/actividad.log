@@ -59,3 +59,154 @@
 [14:06:52] [14:06:52] 📡 Conexión entrante desde 127.0.0.1
 [14:07:02] [14:07:02] 📄 Recibiendo: mi_clave_publica.pem (460 bytes)
 [14:07:02] [14:07:02] ❌ Error al recibir: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+[15:29:08] Iniciando sistema para Alicia...
+[15:29:08] Cargando claves existentes...
+[15:29:08] Claves cargadas exitosamente
+[15:29:08] Clave del destinatario cargada
+[15:29:08] [15:29:08] Servidor iniciado en 172.30.163.24:5000
+[15:29:08] Tu IP local: 172.30.163.24
+[15:29:08] Sistema listo!
+[18:55:55] Iniciando sistema para Alicia...
+[18:55:55] Cargando claves existentes...
+[18:55:55] Claves cargadas exitosamente
+[18:55:55] Clave del destinatario cargada
+[18:55:55] [18:55:55] Servidor iniciado en 172.30.163.24:5000
+[18:55:55] Tu IP local: 172.30.163.24
+[18:55:55] Sistema listo!
+[18:56:02] 
+============================================================
+[18:56:02] GENERANDO CLAVES RSA
+[18:56:02] ============================================================
+[18:56:02] 
+Información de tus claves:
+[18:56:02]    • Tamaño: 2048 bits
+[18:56:02]    • Exponente público (e): 65537
+[18:56:02]    • Módulo (n): 20330929783030184653337825835643129892501529038325... (truncado)
+[18:56:02] 
+Claves guardadas en:
+[18:56:02]    Privada: C:\Users\default.LAPTOP-M81T5L1M\Desktop\2026-1\CIBERSEGURIDAD\CifradoRSA\proyecto_cifrado_rsa\PC1_Alicia\claves\mi_clave_privada.pem
+[18:56:02]    Pública: C:\Users\default.LAPTOP-M81T5L1M\Desktop\2026-1\CIBERSEGURIDAD\CifradoRSA\proyecto_cifrado_rsa\PC1_Alicia\claves\mi_clave_publica.pem
+[18:56:02] 
+IMPORTANTE:
+[18:56:02]    1. NUNCA compartas tu clave privada
+[18:56:02]    2. Comparte tu clave pública con el destinatario
+[18:56:02]    3. Guarda su clave pública como 'destinatario_publica.pem'
+[18:56:02] 
+CLAVES GENERADAS EXITOSAMENTE!
+[18:56:02] ============================================================
+
+[18:57:23] [18:57:23] Conexión entrante desde 127.0.0.1
+[18:57:23] [18:57:23] Recibiendo: mi_clave_publica.pem (451 bytes)
+[18:57:23] [18:57:23] Archivo recibido: mi_clave_publica.pem
+[18:57:23] Archivo recibido: mi_clave_publica.pem
+[18:57:23] Clave pública recibida del destinatario
+[18:57:57] Clave del destinatario importada automáticamente
+[18:58:05] Conectando con: 127.0.0.1
+[18:58:05] Enviando tu clave pública al destinatario...
+[18:58:05] [18:58:05] Enviando: mi_clave_publica.pem
+[18:58:15] [18:58:15] Error al enviar: timed out
+[18:58:05] [18:58:05] Conexión entrante desde 127.0.0.1
+[18:58:15] [18:58:15] Recibiendo: mi_clave_publica.pem (451 bytes)
+[18:58:15] [18:58:15] Error al recibir: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+[18:58:34] 
+Iniciando cifrado de: mask.jpeg
+[18:58:35] Enviando archivo cifrado a 127.0.0.1...
+[18:58:35] [18:58:35] Enviando: mask.jpeg.enc
+[18:58:45] [18:58:45] Error al enviar: timed out
+[18:58:45] Error al enviar archivo
+[18:58:35] [18:58:35] Conexión entrante desde 127.0.0.1
+[18:58:45] [18:58:45] Recibiendo: mask.jpeg.enc (403,160 bytes)
+[18:58:45] [18:58:45] Error al recibir: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+[19:47:38] Iniciando sistema para Alicia...
+[19:47:38] Cargando claves existentes...
+[19:47:38] Claves cargadas exitosamente
+[19:47:38] Clave del destinatario cargada
+[19:47:38] [19:47:38] Servidor iniciado en 172.30.163.24:5000
+[19:47:38] Tu IP local: 172.30.163.24
+[19:47:38] Sistema listo!
+[19:47:43] 
+============================================================
+[19:47:43] GENERANDO CLAVES RSA
+[19:47:43] ============================================================
+[19:47:43] 
+Información de tus claves:
+[19:47:43]    • Tamaño: 2048 bits
+[19:47:43]    • Exponente público (e): 65537
+[19:47:43]    • Módulo (n): 26855636264734098007931516533162818554377454928482... (truncado)
+[19:47:43] 
+Claves guardadas en:
+[19:47:43]    Privada: C:\Users\default.LAPTOP-M81T5L1M\Desktop\2026-1\CIBERSEGURIDAD\CifradoRSA\proyecto_cifrado_rsa\PC1_Alicia\claves\mi_clave_privada.pem
+[19:47:43]    Pública: C:\Users\default.LAPTOP-M81T5L1M\Desktop\2026-1\CIBERSEGURIDAD\CifradoRSA\proyecto_cifrado_rsa\PC1_Alicia\claves\mi_clave_publica.pem
+[19:47:43] 
+IMPORTANTE:
+[19:47:43]    1. NUNCA compartas tu clave privada
+[19:47:43]    2. Comparte tu clave pública con el destinatario
+[19:47:43]    3. Guarda su clave pública como 'destinatario_publica.pem'
+[19:47:43] 
+CLAVES GENERADAS EXITOSAMENTE!
+[19:47:43] ============================================================
+
+[19:48:58] Conectando con: 127.0.0.1
+[19:48:58] Enviando tu clave pública al destinatario...
+[19:48:58] [19:48:58] Enviando: mi_clave_publica.pem
+[19:49:08] [19:49:08] Error al enviar: timed out
+[19:48:58] [19:48:58] Conexión entrante desde 127.0.0.1
+[19:49:08] [19:49:08] Recibiendo: mi_clave_publica.pem (451 bytes)
+[19:49:08] [19:49:08] Error al recibir: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+[19:49:36] Conectando con: 127.0.0.1
+[19:49:36] Enviando tu clave pública al destinatario...
+[19:49:36] [19:49:36] Enviando: mi_clave_publica.pem
+[19:49:46] [19:49:46] Error al enviar: timed out
+[19:49:36] [19:49:36] Conexión entrante desde 127.0.0.1
+[19:49:46] [19:49:46] Recibiendo: mi_clave_publica.pem (451 bytes)
+[19:49:46] [19:49:46] Error al recibir: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+[19:50:00] [19:50:00] Conexión entrante desde 127.0.0.1
+[19:50:00] [19:50:00] Recibiendo: mi_clave_publica.pem (451 bytes)
+[19:50:00] [19:50:00] Archivo recibido: mi_clave_publica.pem
+[19:50:00] Archivo recibido: mi_clave_publica.pem
+[19:50:00] Clave pública recibida del destinatario
+[19:50:06] Clave del destinatario importada automáticamente
+[19:50:16] 
+Iniciando cifrado de: mask.jpeg
+[19:50:16] Enviando archivo cifrado a 127.0.0.1...
+[19:50:16] [19:50:16] Enviando: mask.jpeg.enc
+[19:50:26] [19:50:26] Error al enviar: timed out
+[19:50:26] Error al enviar archivo
+[19:50:16] [19:50:16] Conexión entrante desde 127.0.0.1
+[19:50:26] [19:50:26] Recibiendo: mask.jpeg.enc (403,160 bytes)
+[19:50:26] [19:50:26] Error al recibir: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+[22:36:06] 
+Iniciando cifrado de: mask.jpeg
+[22:36:06] Enviando archivo cifrado a 127.0.0.1...
+[22:36:06] [22:36:06] Enviando: mask.jpeg.enc
+[22:36:16] [22:36:16] Error al enviar: timed out
+[22:36:16] Error al enviar archivo
+[22:36:06] [22:36:06] Conexión entrante desde 127.0.0.1
+[22:36:16] [22:36:16] Recibiendo: mask.jpeg.enc (403,160 bytes)
+[22:36:16] [22:36:16] Error al recibir: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+[22:40:03] Conectando con: 127.0.0.1
+[22:40:03] Enviando tu clave pública al destinatario...
+[22:40:03] [22:40:03] Enviando: mi_clave_publica.pem
+[22:40:13] [22:40:13] Error al enviar: timed out
+[22:40:03] [22:40:03] Conexión entrante desde 127.0.0.1
+[22:40:13] [22:40:13] Recibiendo: mi_clave_publica.pem (451 bytes)
+[22:40:13] [22:40:13] Error al recibir: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+[22:40:24] [22:40:24] Conexión entrante desde 127.0.0.1
+[22:40:24] [22:40:24] Recibiendo: mi_clave_publica.pem (451 bytes)
+[22:40:24] [22:40:24] Archivo recibido: mi_clave_publica.pem
+[22:40:24] Archivo recibido: mi_clave_publica.pem
+[22:40:24] Clave pública recibida del destinatario
+[22:40:30] Clave del destinatario importada automáticamente
+[22:40:40] 
+Iniciando cifrado de: 20130609_141614_censored.jpg
+[22:40:40] Enviando archivo cifrado a 127.0.0.1...
+[22:40:40] [22:40:40] Enviando: 20130609_141614_censored.jpg.enc
+[22:40:50] [22:40:50] Error al enviar: timed out
+[22:40:50] Error al enviar archivo
+[22:40:40] [22:40:40] Conexión entrante desde 127.0.0.1
+[22:40:50] [22:40:50] Recibiendo: 20130609_141614_censored.jpg.enc (327,896 bytes)
+[22:40:50] [22:40:50] Error al recibir: [WinError 10053] Se ha anulado una conexión establecida por el software en su equipo host
+[22:41:38] Conectando con: 172.30.163.24
+[22:41:38] Enviando tu clave pública al destinatario...
+[22:41:38] [22:41:38] Enviando: mi_clave_publica.pem
+[22:41:48] [22:41:48] Error al enviar: timed out

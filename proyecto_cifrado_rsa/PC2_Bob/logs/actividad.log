@@ -37,3 +37,137 @@
 [13:28:13] [13:28:13] 🌐 Servidor iniciado en 172.30.163.24:5000
 [13:28:13] 📍 Tu IP local: 172.30.163.24
 [13:28:13] ✅ Sistema listo!
+[15:28:19] 
+============================================================
+[15:28:19] 🔑 GENERANDO CLAVES RSA
+[15:28:19] ============================================================
+[15:28:19] 
+📊 Información de tus claves:
+[15:28:19]    • Tamaño: 2048 bits
+[15:28:19]    • Exponente público (e): 65537
+[15:28:19]    • Módulo (n): 21788595483007737157981665195559737658193047900053... (truncado)
+[15:28:19] 
+📂 Claves guardadas en:
+[15:28:19]    🔐 Privada: C:\Users\default.LAPTOP-M81T5L1M\Desktop\2026-1\CIBERSEGURIDAD\CifradoRSA\proyecto_cifrado_rsa\PC2_Bob\claves\mi_clave_privada.pem
+[15:28:19]    🔓 Pública: C:\Users\default.LAPTOP-M81T5L1M\Desktop\2026-1\CIBERSEGURIDAD\CifradoRSA\proyecto_cifrado_rsa\PC2_Bob\claves\mi_clave_publica.pem
+[15:28:19] 
+💡 IMPORTANTE:
+[15:28:19]    1. NUNCA compartas tu clave privada
+[15:28:19]    2. Comparte tu clave pública con el destinatario
+[15:28:19]    3. Guarda su clave pública como 'destinatario_publica.pem'
+[15:28:19] 
+✅ CLAVES GENERADAS EXITOSAMENTE!
+[15:28:19] ============================================================
+
+[15:29:17] Iniciando sistema para Bob...
+[15:29:17] Cargando claves existentes...
+[15:29:17] Claves cargadas exitosamente
+[15:29:17] [15:29:17] Servidor iniciado en 172.30.163.24:5000
+[15:29:17] Tu IP local: 172.30.163.24
+[15:29:17] Sistema listo!
+[15:34:42] 
+============================================================
+[15:34:42] GENERANDO CLAVES RSA
+[15:34:42] ============================================================
+[15:34:42] 
+Información de tus claves:
+[15:34:42]    • Tamaño: 2048 bits
+[15:34:42]    • Exponente público (e): 65537
+[15:34:42]    • Módulo (n): 28360826906914866228676009453022204070998814136893... (truncado)
+[15:34:42] 
+Claves guardadas en:
+[15:34:42]    Privada: C:\Users\default.LAPTOP-M81T5L1M\Desktop\2026-1\CIBERSEGURIDAD\CifradoRSA\proyecto_cifrado_rsa\PC2_Bob\claves\mi_clave_privada.pem
+[15:34:42]    Pública: C:\Users\default.LAPTOP-M81T5L1M\Desktop\2026-1\CIBERSEGURIDAD\CifradoRSA\proyecto_cifrado_rsa\PC2_Bob\claves\mi_clave_publica.pem
+[15:34:42] 
+IMPORTANTE:
+[15:34:42]    1. NUNCA compartas tu clave privada
+[15:34:42]    2. Comparte tu clave pública con el destinatario
+[15:34:42]    3. Guarda su clave pública como 'destinatario_publica.pem'
+[15:34:42] 
+CLAVES GENERADAS EXITOSAMENTE!
+[15:34:42] ============================================================
+
+[18:57:05] Iniciando sistema para Bob...
+[18:57:05] Cargando claves existentes...
+[18:57:05] Claves cargadas exitosamente
+[18:57:05] Clave del destinatario cargada
+[18:57:05] [18:57:05] Servidor iniciado en 172.30.163.24:5000
+[18:57:05] Tu IP local: 172.30.163.24
+[18:57:05] Sistema listo!
+[18:57:13] 
+============================================================
+[18:57:13] GENERANDO CLAVES RSA
+[18:57:13] ============================================================
+[18:57:13] 
+Información de tus claves:
+[18:57:13]    • Tamaño: 2048 bits
+[18:57:13]    • Exponente público (e): 65537
+[18:57:13]    • Módulo (n): 25718713109635794558721468574961666111034960401498... (truncado)
+[18:57:13] 
+Claves guardadas en:
+[18:57:13]    Privada: C:\Users\default.LAPTOP-M81T5L1M\Desktop\2026-1\CIBERSEGURIDAD\CifradoRSA\proyecto_cifrado_rsa\PC2_Bob\claves\mi_clave_privada.pem
+[18:57:13]    Pública: C:\Users\default.LAPTOP-M81T5L1M\Desktop\2026-1\CIBERSEGURIDAD\CifradoRSA\proyecto_cifrado_rsa\PC2_Bob\claves\mi_clave_publica.pem
+[18:57:13] 
+IMPORTANTE:
+[18:57:13]    1. NUNCA compartas tu clave privada
+[18:57:13]    2. Comparte tu clave pública con el destinatario
+[18:57:13]    3. Guarda su clave pública como 'destinatario_publica.pem'
+[18:57:13] 
+CLAVES GENERADAS EXITOSAMENTE!
+[18:57:13] ============================================================
+
+[18:57:23] Conectando con: 127.0.0.1
+[18:57:23] Enviando tu clave pública al destinatario...
+[18:57:23] [18:57:23] Enviando: mi_clave_publica.pem
+[18:57:23] [18:57:23] Archivo enviado
+[18:57:23] Tu clave pública fue enviada exitosamente
+[18:57:30] Clave del destinatario cargada
+[19:48:19] Iniciando sistema para Bob...
+[19:48:19] Cargando claves existentes...
+[19:48:20] Claves cargadas exitosamente
+[19:48:20] Clave del destinatario cargada
+[19:48:20] [19:48:20] Servidor iniciado en 172.30.163.24:5000
+[19:48:20] Tu IP local: 172.30.163.24
+[19:48:20] Sistema listo!
+[19:48:22] 
+============================================================
+[19:48:22] GENERANDO CLAVES RSA
+[19:48:22] ============================================================
+[19:48:22] 
+Información de tus claves:
+[19:48:22]    • Tamaño: 2048 bits
+[19:48:22]    • Exponente público (e): 65537
+[19:48:22]    • Módulo (n): 23701561371104071763027290577478334185526195903551... (truncado)
+[19:48:22] 
+Claves guardadas en:
+[19:48:22]    Privada: C:\Users\default.LAPTOP-M81T5L1M\Desktop\2026-1\CIBERSEGURIDAD\CifradoRSA\proyecto_cifrado_rsa\PC2_Bob\claves\mi_clave_privada.pem
+[19:48:22]    Pública: C:\Users\default.LAPTOP-M81T5L1M\Desktop\2026-1\CIBERSEGURIDAD\CifradoRSA\proyecto_cifrado_rsa\PC2_Bob\claves\mi_clave_publica.pem
+[19:48:22] 
+IMPORTANTE:
+[19:48:22]    1. NUNCA compartas tu clave privada
+[19:48:22]    2. Comparte tu clave pública con el destinatario
+[19:48:22]    3. Guarda su clave pública como 'destinatario_publica.pem'
+[19:48:22] 
+CLAVES GENERADAS EXITOSAMENTE!
+[19:48:22] ============================================================
+
+[19:50:00] Conectando con: 127.0.0.1
+[19:50:00] Enviando tu clave pública al destinatario...
+[19:50:00] [19:50:00] Enviando: mi_clave_publica.pem
+[19:50:00] [19:50:00] Archivo enviado
+[19:50:00] Tu clave pública fue enviada exitosamente
+[19:50:04] Clave del destinatario cargada
+[22:40:24] Conectando con: 127.0.0.1
+[22:40:24] Enviando tu clave pública al destinatario...
+[22:40:24] [22:40:24] Enviando: mi_clave_publica.pem
+[22:40:24] [22:40:24] Archivo enviado
+[22:40:24] Tu clave pública fue enviada exitosamente
+[22:40:27] Clave del destinatario cargada
+[22:41:35] Conectando con: 172.30.163.24
+[22:41:35] Enviando tu clave pública al destinatario...
+[22:41:35] [22:41:35] Enviando: mi_clave_publica.pem
+[22:41:45] [22:41:45] Error al enviar: timed out
+[22:41:56] Conectando con: 172.30.163.24
+[22:41:56] Enviando tu clave pública al destinatario...
+[22:41:56] [22:41:56] Enviando: mi_clave_publica.pem
+[22:42:06] [22:42:06] Error al enviar: timed out
